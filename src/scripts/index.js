@@ -15,7 +15,6 @@ const checkbox = document.querySelector("#checkbox");
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    // console.log("Form was submitted!");
     const user = {
         name: name.value,
         email: email.value,
@@ -24,7 +23,6 @@ form.addEventListener("submit", (e) => {
         checkbox: checkbox.value
     };
 
-    // console.log(user);
     fetch("https://jsonplaceholder.typicode.com/posts", {
         method: "POST",
         body: JSON.stringify(user)
@@ -42,32 +40,32 @@ form.addEventListener("submit", (e) => {
 
 ///this is with async await 
 
-// const url = "htps://jsonplaceholder.typicode.com/posts";
+const url = "https://jsonplaceholder.typicode.com/posts";
 
-// form.addEventListener("submit", (e) => {
-//     e.preventDefault();
-//     const user = {
-//         name: name.value,
-//         email: email.value,
-//         password: password.value,
-//         message: message.value,
-//         checkbox: checkbox.value
-//     };
-//     console.log(user);
-//     getUsers(user);
-//     alert("Thank you for submitting your details.");
-// });
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const user = {
+        name: name.value,
+        email: email.value,
+        password: password.value,
+        message: message.value,
+        checkbox: checkbox.value
+    };
+    console.log(user);
+    getUsers(user);
+    alert("Thank you for submitting your details.");
+});
 
 
-// const getUsers = async () => {
-//     try {
-//         const response = await fetch(url, {
-//             method: "POST",
-//             body: JSON.stringify(user),
-//         });
-//         return response;
-//     } catch {
-//         console.warn("Error");
-//     }
-// }
+const getUsers = async () => {
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            body: JSON.stringify(user),
+        });
+        return response;
+    } catch {
+        console.warn("Error");
+    }
+}
 
